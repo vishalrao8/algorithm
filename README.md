@@ -1,16 +1,32 @@
 # Algorithms in Python
 
+> [!NOTE]
+> **Authorship & AI Contribution Disclosure**  
+> All algorithm implementations in this repository are **handwritten by the author** to build a deep, intuitive grasp over core algorithms, data structures, and foundational problem-solving techniques. AI assistance was used exclusively for generating and formatting this documentation (`README.md`).
+
 A clean, modular Python repository implementing classic data structures and algorithms with clear code, complexity analysis, and examples.
 
 ---
 
 ## 📌 Features & Algorithms
 
-### Sorting Algorithms
+### 1. Sorting Algorithms (`sort/`)
 | Algorithm | Best Time | Average Time | Worst Time | Space | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Selection Sort** | $O(n^2)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ | ✅ Implemented |
-| **Bubble Sort** | $O(n)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ | 🚧 Work in progress |
+| **Bubble Sort** | $O(n)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ | ✅ Implemented |
+| **Insertion Sort** | $O(n)$ | $O(n^2)$ | $O(n^2)$ | $O(1)$ | 🚧 Work in progress |
+| **Merge Sort** | $O(n \log n)$ | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ | 🚧 Work in progress |
+| **Quick Sort** | $O(n \log n)$ | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ | 🚧 Work in progress |
+
+### 2. Searching Algorithms (`search/`)
+| Algorithm | Best Time | Average Time | Worst Time | Space | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Binary Search** | $O(1)$ | $O(\log n)$ | $O(\log n)$ | $O(1)$ | 🚧 Work in progress |
+| **Quick Select** | $O(n)$ | $O(n)$ | $O(n^2)$ | $O(1)$ | 🚧 Work in progress |
+
+### 3. Recursion (`recursion/`)
+- 🚧 Planned
 
 ---
 
@@ -19,14 +35,21 @@ A clean, modular Python repository implementing classic data structures and algo
 ```text
 algorithm/
 ├── src/
+│   ├── __init__.py
 │   └── algorithm/
-│       ├── __init__.py               # Package entry point
-│       └── algorithms/
-│           ├── selection_sort.py     # Selection sort implementation
-│           └── bubble_sort.py        # Bubble sort implementation
-├── pyproject.toml                    # Project configuration & dependencies
-├── README.md                         # Documentation
-└── .python-version                   # Python version
+│       ├── sort/
+│       │   ├── bubble_sort.py
+│       │   ├── insertion_sort.py
+│       │   ├── merge_sort.py
+│       │   ├── quick_sort.py
+│       │   └── selection_sort.py
+│       ├── search/
+│       │   ├── binary_search.py
+│       │   └── quick_select.py
+│       └── recursion/
+├── pyproject.toml
+├── README.md
+└── .python-version
 ```
 
 ---
@@ -49,7 +72,6 @@ cd algorithm
 #### Using `uv` (Recommended)
 
 ```bash
-# Run directly
 uv run python -m algorithm
 ```
 
@@ -68,21 +90,21 @@ pip install -e .
 
 ## 💻 Usage
 
-### Running as a Module
-
-```bash
-python3 -m algorithm
-```
-
 ### Importing into Your Code
 
 ```python
-from algorithm.algorithms.selection_sort import selection_sort
+from algorithm.sort.selection_sort import selection_sort
+from algorithm.sort.bubble_sort import bubble_sort
 
 data = [64, 25, 12, 22, 11]
-sorted_data = selection_sort(data)
-print("Sorted array:", sorted_data)
-# Output: [11, 12, 22, 25, 64]
+
+# Selection Sort
+sorted_selection = selection_sort(data.copy())
+print("Selection Sort:", sorted_selection)
+
+# Bubble Sort
+sorted_bubble = bubble_sort(data.copy())
+print("Bubble Sort:", sorted_bubble)
 ```
 
 ---
@@ -92,9 +114,9 @@ print("Sorted array:", sorted_data)
 Contributions are welcome! If you would like to implement a new algorithm or improve existing ones:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/insertion-sort`)
-3. Commit your changes (`git commit -m "Add insertion sort"`)
-4. Push to the branch (`git push origin feature/insertion-sort`)
+2. Create your feature branch (`git checkout -b feature/merge-sort`)
+3. Commit your changes (`git commit -m "Add merge sort"`)
+4. Push to the branch (`git push origin feature/merge-sort`)
 5. Open a Pull Request
 
 ---
@@ -102,3 +124,4 @@ Contributions are welcome! If you would like to implement a new algorithm or imp
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
+

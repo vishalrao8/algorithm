@@ -1,3 +1,5 @@
+# time = O(N^2), space = O(1)
+
 def selection_sort(arr):
     for i in range(len(arr)):
         minmIndex = i
