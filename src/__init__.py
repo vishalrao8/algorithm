@@ -1,8 +1,8 @@
-from algorithm.sort.merge_sort import merge_sort_in_place
+from algorithm.sort.quick_sort import quick_sort
 
 def main() -> None:
     arr = [1, 2, 10, 4, 9, 5, 9]
-    merge_sort_in_place(arr)
+    quick_sort(arr)
     print(arr)
 
 if __name__ == "__main__":

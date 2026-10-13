@@ -2,8 +2,8 @@
 def merge_sort(arr: list[int]) -> list[int]:
     def helper(start: int, end: int) -> list[int]:
         if start >= end:
-            return arr[start:end+1]
-        
+            return arr[start : end + 1]
+
         mid = start + ((end - start) // 2)
         leftList = helper(start, mid)
         rightList = helper(mid + 1, end)
@@ -33,11 +33,12 @@ def merge_sort(arr: list[int]) -> list[int]:
     return arr
 
 
+# time = O(nlogn), space = O(n)
 def merge_sort_in_place(arr: list[int]) -> list[int]:
     def helper(start: int, end: int):
         if start >= end:
-            return 
-        
+            return
+
         mid = start + ((end - start) // 2)
         helper(start, mid)
         helper(mid + 1, end)
@@ -53,14 +54,14 @@ def merge_sort_in_place(arr: list[int]) -> list[int]:
                 aux.append(arr[j])
                 j += 1
 
-        while i <= mid :
+        while i <= mid:
             aux.append(arr[i])
             i += 1
         while j <= end:
             aux.append(arr[j])
             j += 1
 
-        arr[start: end+1] = aux
+        arr[start : end + 1] = aux
 
     helper(0, len(arr) - 1)
     return arr
